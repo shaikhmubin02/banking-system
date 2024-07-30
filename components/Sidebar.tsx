@@ -42,7 +42,12 @@ const Sidebar = ({user} : SiderbarProps) => {
             </Link>
           )
         })}
-      </nav>    
+
+        USER 
+        
+      </nav>   
+      Footer
+
     </section>
   )}
 
