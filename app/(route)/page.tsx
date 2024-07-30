@@ -42,7 +42,37 @@ const Home = () => {
 
           user={loggedIn}
           transactions={[]}
-          banks={[]}
+          banks={[{currentBalance: 14000.00,id: '0',
+            availableBalance: 123,
+            officialName: '0',
+            mask: '0',
+            institutionId: '0',
+            name: '0',
+            type: '0',
+            subtype: '0',
+            appwriteItemId: '0',
+            shareableId: '0',$id: '0',
+            accountId: '0',
+            bankId: '0',
+            accessToken: '0',
+            fundingSourceUrl: '0',
+            userId: '0'},
+            {currentBalance: 150.00,id: '0',
+            availableBalance: 123,
+            officialName: '0',
+            mask: '0',
+            institutionId: '0',
+            name: '0',
+            type: '0',
+            subtype: '0',
+            appwriteItemId: '0',
+            shareableId: '0',
+            $id: '0',
+            accountId: '0',
+            bankId: '0',
+            accessToken: '0',
+            fundingSourceUrl: '0',
+            userId: '0'}]}
         />
     </section>
   )
