@@ -27,6 +27,8 @@ import {
   } 
   
   const TransactionsTable = ({ transactions }: TransactionTableProps) => {
+
+    console.log("hii",transactions);
     return (
       <Table>
         <TableHeader className="bg-[#f9fafb]">
