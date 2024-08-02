@@ -235,7 +235,8 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
             </FormItem>
           )}
         />
-        <p className="text-14 text-gray-600 mt-4 mb-2">"The funds will take up to 2 business days to transfer."</p>
+        <p className="text-14 text-gray-600 mt-4 mb-2">&quot;The funds will take up to 2 business days to transfer.&quot;</p>
+
         <div className="payment-transfer_btn-box">
           <Button type="submit" className="payment-transfer_btn">
             {isLoading ? (
