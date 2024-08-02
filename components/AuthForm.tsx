@@ -115,6 +115,9 @@ const AuthForm = ({ type }: { type: string }) => {
       {user ? (
         <div className="flex flex-col gap-4">
           <PlaidLink user={user} variant="primary" />
+          <p className="text-16 font-normal text-gray-600">Note: </p>  
+          <p className='text-[16px] font-semibold text-black-2'>username: user_good</p>
+          <p className='text-[16px] font-semibold text-black-2'>password: pass_good</p>
         </div>
       ): (
         <>
