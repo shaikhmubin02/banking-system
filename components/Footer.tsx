@@ -15,9 +15,13 @@ const Footer = ({ user, type = 'desktop' }: FooterProps) => {
   return (
     <footer className="footer">
       <div className={type === 'mobile' ? 'footer_name-mobile' : 'footer_name'}>
-        <p className="text-xl font-bold text-gray-700">
-          {user?.firstName[0]}
-        </p>
+        {user?.email === "shaikhmubin@gmail.com" ? (
+          <Image src="/icons/profile.jpg" width={50} height={50} alt="User Profile Image" className="rounded-full" />
+        ) : (
+          <p className="text-xl font-bold text-gray-700">
+            {user?.firstName[0]}
+          </p>
+        )}
       </div>
 
       <div className={type === 'mobile' ? 'footer_email-mobile' : 'footer_email'}>
@@ -30,7 +34,7 @@ const Footer = ({ user, type = 'desktop' }: FooterProps) => {
       </div>
 
       <div className="footer_image" onClick={handleLogOut}>
-        <Image src="icons/logout.svg" fill alt="mubin" />
+        <Image src="icons/logout.svg" fill alt="jsm" />
       </div>
     </footer>
   )

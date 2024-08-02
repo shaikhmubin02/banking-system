@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "WealthWise",
   description: "WealthWise is a modern banking platform for everyone.",
   icons: { 
-    icon: '/icons/logo.svg'
+    icon: '/icons/logo.png'
   }
 };
 

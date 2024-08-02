@@ -1,15 +1,20 @@
-import { formatAmount } from '@/lib/utils'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import Copy from './Copy'
+import { formatAmount } from '@/lib/utils';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import Copy from './Copy';
 
-const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) => {
+interface CreditCardProps {
+  account: Account;
+  userName: string;
+  showBalance?: boolean;
+  cardType?: string | 'visa' | 'mastercard';
+}
 
-  console.log(account);
+const BankCard = ({ account, userName, showBalance = true, cardType }: CreditCardProps) => {
   return (
-    <div className="flex flex-col">
-      <Link href={`/transaction-history/?id=${account.appwriteItemId}`} className="bank-card">
+    <section className="flex flex-col">
+      <div className="bank-card">
         <div className="bank-card_content">
           <div>
             <h1 className="text-16 font-semibold text-white"> {account.name} </h1>
@@ -31,13 +36,23 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
             height={24}
             alt="pay"
           />
-          <Image 
-            src="/icons/mastercard.svg"
-            width={45}
-            height={32}
-            alt="mastercard"
-            className="ml-5"
-          />
+          {cardType === 'visa' ? (
+            <Image 
+              src="/icons/visa.svg"
+              width={45}
+              height={32}
+              alt="visa"
+              className="ml-5"
+            />
+          ) : (
+            <Image 
+              src="/icons/mastercard.svg"
+              width={45}
+              height={32}
+              alt="mastercard"
+              className="ml-5 justify-end"
+            />
+          )}
         </div>
 
         <Image 
@@ -47,11 +62,11 @@ const BankCard = ({ account, userName, showBalance = true }: CreditCardProps) =>
           alt="lines"
           className="absolute top-0 left-0"
         />
-      </Link>
+      </div>
 
       {showBalance && <Copy title={account?.shareableId} />}
-    </div>
+    </section>
   )
 }
 
-export default BankCard
+export default BankCard;

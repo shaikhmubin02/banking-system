@@ -37,7 +37,7 @@ const MobileNav = ({user}: MobileNavProps) => {
       <SheetContent side='left' className='border-none bg-white'>
         <Link href="/" className='cursor-pointer flex items-center gap-1 px-4'> 
           <Image 
-            src="/icons/logo.svg" 
+            src="/icons/logo.png" 
             width={34} 
             height={34}
             alt='WealthWise logo'
