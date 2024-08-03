@@ -47,9 +47,7 @@ git clone https://github.com/shaikhmubin02/banking-system.git
 cd banking-system
 ```
 
-****
-
-Install the project dependencies using npm:
+**Install the project dependencies using npm:**
 
 ```bash
 npm install
