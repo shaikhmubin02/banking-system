@@ -15,13 +15,9 @@ const Footer = ({ user, type = 'desktop' }: FooterProps) => {
   return (
     <footer className="footer">
       <div className={type === 'mobile' ? 'footer_name-mobile' : 'footer_name'}>
-        {user?.email === "shaikhmubin@gmail.com" ? (
-          <Image src="/icons/profile.jpg" width={50} height={50} alt="User Profile Image" className="rounded-full" />
-        ) : (
-          <p className="text-xl font-bold text-gray-700">
-            {user?.firstName[0]}
-          </p>
-        )}
+        <p className="text-xl font-bold text-gray-700">
+          {user?.firstName[0]}
+        </p>
       </div>
 
       <div className={type === 'mobile' ? 'footer_email-mobile' : 'footer_email'}>

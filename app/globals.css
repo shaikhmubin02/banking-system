@@ -88,10 +88,6 @@
     @apply text-[20px] leading-[24px];
   }
 
-  .text-23 {
-    @apply text-[23px] leading-[29px];
-  }
-
   .text-24 {
     @apply text-[24px] leading-[30px];
   }
@@ -369,7 +365,7 @@
   }
 
   .sidebar-logo {
-    @apply 2xl:text-23 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden;
+    @apply 2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden;
   }
 
   .sidebar-link {

@@ -1,24 +1,12 @@
-"use client"
-
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import BankCard from './BankCard';
-import { countTransactionCategories } from '@/lib/utils';
-import Category from './Category';
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import BankCard from './BankCard'
+import { countTransactionCategories } from '@/lib/utils'
+import Category from './Category'
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
-  // Initialize state with banks and their card types
-  const [bankCards, setBankCards] = useState([
-    { ...banks[0], cardType: 'mastercard' },
-    { ...banks[1], cardType: 'visa' }
-  ]);
-
   const categories: CategoryCount[] = countTransactionCategories(transactions);
-
-  const swapCards = () => {
-    setBankCards([bankCards[1], bankCards[0]]);
-  };
 
   return (
     <aside className="right-sidebar">
@@ -26,7 +14,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
         <div className="profile-banner" />
         <div className="profile">
           <div className="profile-img">
-            <span className="text-5xl font-bold text-blue-500">{user.firstName[0].toUpperCase()}</span>
+            <span className="text-5xl font-bold text-blue-500">{user.firstName[0]}</span>
           </div>
 
           <div className="profile-details">
@@ -56,25 +44,23 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
           </Link>
         </div>
 
-        {bankCards?.length > 0 && (
+        {banks?.length > 0 && (
           <div className="relative flex flex-1 flex-col items-center justify-center gap-5">
-            <div className='relative z-10 cursor-pointer' onClick={swapCards}>
+            <div className='relative z-10'>
               <BankCard 
-                key={bankCards[0].$id}
-                account={bankCards[0]}
+                key={banks[0].$id}
+                account={banks[0]}
                 userName={`${user.firstName} ${user.lastName}`}
                 showBalance={false}
-                cardType={bankCards[0].cardType}
               />
             </div>
-            {bankCards[1] && (
-              <div className="absolute right-0 top-8 z-0 w-[90%] cursor-pointer" onClick={swapCards}>
+            {banks[1] && (
+              <div className="absolute right-0 top-8 z-0 w-[90%]">
                 <BankCard 
-                  key={bankCards[1].$id}
-                  account={bankCards[1]}
+                  key={banks[1].$id}
+                  account={banks[1]}
                   userName={`${user.firstName} ${user.lastName}`}
                   showBalance={false}
-                  cardType={bankCards[1].cardType}
                 />
               </div>
             )}
@@ -95,4 +81,4 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
   )
 }
 
-export default RightSidebar;
+export default RightSidebar
